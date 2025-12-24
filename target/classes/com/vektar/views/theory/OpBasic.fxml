@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vektar.controllers.TheoryController.OpBasicController">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/slides/4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnMenu" fitHeight="61.0" fitWidth="61.0" layoutX="328.0" layoutY="74.0" onMouseClicked="#handleMenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnX.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnSiguiente" fitHeight="77.0" fitWidth="87.0" layoutX="1725.0" layoutY="82.0" onMouseClicked="#handleSiguiente" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnSiguiente.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnInicio" fitHeight="87.0" fitWidth="417.0" layoutX="10.0" layoutY="196.0" onMouseClicked="#handleInicio" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnInicio.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnMD" fitHeight="101.0" fitWidth="404.0" layoutX="7.0" layoutY="295.0" onMouseClicked="#handleMagnitud" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnMagnitud2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnOB" fitHeight="87.0" fitWidth="390.0" layoutX="6.0" layoutY="406.0" onMouseClicked="#handleOB" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnOB.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnEV" fitHeight="87.0" fitWidth="404.0" layoutX="6.0" layoutY="506.0" onMouseClicked="#handleEV" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnEV2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnPP" fitHeight="101.0" fitWidth="390.0" layoutX="7.0" layoutY="606.0" onMouseClicked="#handlePP" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnPP2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnPC" fitHeight="101.0" fitWidth="390.0" layoutX="6.0" layoutY="717.0" onMouseClicked="#handlePC" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnPC2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnFisica" fitHeight="101.0" fitWidth="390.0" layoutX="8.0" layoutY="818.0" onMouseClicked="#handleFisica" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnFisica2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnQuiz" fitHeight="124.0" fitWidth="385.0" layoutX="8.0" layoutY="925.0" onMouseClicked="#handleQuiz" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnQI2.png" />
+         </image>
+      </ImageView>
+
+         <!-- Vector B panel -->
+         <AnchorPane layoutX="469.0" layoutY="673.0" prefHeight="335.0" prefWidth="584.0" style="-fx-background-color: #063b72; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8,0,0,2);">
+            <children>
+               <Label fx:id="lblBHeader" layoutX="50.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 40; -fx-font-weight: bold;" text="Vector B" />
+               <Label fx:id="lblBValue" layoutX="50.0" layoutY="70.0" style="-fx-text-fill: white; -fx-font-size: 40; -fx-font-weight: bold;" text="(0, 0)" />
+               <Label layoutX="59.0" layoutY="133.0" style="-fx-text-fill: white; -fx-font-size: 30;" text="X" />
+               <Slider fx:id="sliderBX" layoutX="52.0" layoutY="184.0" max="10.0" min="-10.0" prefWidth="480.0" />
+               <Label layoutX="59.0" layoutY="208.0" style="-fx-text-fill: white; -fx-font-size: 30;" text="Y" />
+               <Slider fx:id="sliderBY" layoutX="52.0" layoutY="259.0" max="10.0" min="-10.0" prefWidth="480.0" />
+            </children>
+         </AnchorPane>
+         <!-- Vector A panel -->
+         <AnchorPane layoutX="469.0" layoutY="326.0" prefHeight="335.0" prefWidth="584.0" style="-fx-background-color: #063b72; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8,0,0,2);">
+            <children>
+               <Label fx:id="lblAHeader" layoutX="48.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 40; -fx-font-weight: bold;" text="Vector A" />
+               <Label fx:id="lblAValue" layoutX="51.0" layoutY="73.0" style="-fx-text-fill: white; -fx-font-size: 40; -fx-font-weight: bold;" text="(0, 0)" />
+               <Label layoutX="54.0" layoutY="131.0" style="-fx-text-fill: white; -fx-font-size: 30;" text="X" />
+               <Slider fx:id="sliderAX" layoutX="48.0" layoutY="184.0" max="10.0" min="-10.0" prefWidth="480.0" />
+               <Label layoutX="54.0" layoutY="213.0" style="-fx-text-fill: white; -fx-font-size: 30;" text="Y" />
+               <Slider fx:id="sliderAY" layoutX="48.0" layoutY="261.0" max="10.0" min="-10.0" prefWidth="480.0" />
+            </children>
+         </AnchorPane>
+         <Label fx:id="lblSum" alignment="CENTER" contentDisplay="CENTER" layoutX="1153.0" layoutY="494.0" style="-fx-text-fill: #004aad; -fx-font-size: 70; -fx-font-weight: bold;" text="(0, 0)" textAlignment="CENTER" />
+         <Label fx:id="lblDiff" alignment="CENTER" contentDisplay="CENTER" layoutX="1153.0" layoutY="667.0" style="-fx-text-fill: #004aad; -fx-font-size: 70; -fx-font-weight: bold;" text="(0, 0)" textAlignment="CENTER" />
+         <Label fx:id="lbl2A" alignment="CENTER" contentDisplay="CENTER" layoutX="1153.0" layoutY="847.0" style="-fx-text-fill: #004aad; -fx-font-size: 70; -fx-font-weight: bold;" text="(0, 0)" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
