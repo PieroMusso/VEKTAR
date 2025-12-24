@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
@@ -24,6 +25,7 @@
             <Image url="@../../../../assets/image/botones/btnSiguiente.png" />
          </image>
       </ImageView>
+      <Hyperlink layoutX="1566.0" layoutY="96.0" onMouseClicked="#handleGoCalc" style="-fx-text-fill: #063b72; -fx-font-weight: bold; -fx-font-size: 20;" text="Ir a Calculadora" />
       <ImageView fx:id="btnInicio" fitHeight="87.0" fitWidth="417.0" layoutX="10.0" layoutY="196.0" onMouseClicked="#handleInicio" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../assets/image/botones/btnInicio.png" />
@@ -64,7 +66,7 @@
             <Image url="@../../../../assets/image/botones/btnQI2.png" />
          </image>
       </ImageView>
-      <!-- Control panel (left center) -->
+      
       <AnchorPane layoutX="477.0" layoutY="375.0" prefHeight="332.0" prefWidth="576.0" style="-fx-background-color: #063b72; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8,0,0,2);">
          <children>
             <Label fx:id="lblVectorHeader" layoutX="18.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 40; -fx-font-weight: bold;" text="Vector A = (0.00, 0.00)" />
@@ -78,21 +80,21 @@
          </children>
       </AnchorPane>
       
-      <!-- Magnitude summary box (big number) -->
+      
       <AnchorPane layoutX="500.0" layoutY="783.0" prefHeight="78.0" prefWidth="74.0" style="-fx-padding: 10; -fx-background-radius: 4;">
          <children>
             <Label fx:id="lblMagValue" style="-fx-text-fill: #0b66d0; -fx-font-size: 40; -fx-font-weight: bold;" text="0.00" />
          </children>
       </AnchorPane>
 
-      <!-- Direction summary box (big number) -->
+      
       <AnchorPane layoutX="637.0" layoutY="860.0" prefHeight="88.0" prefWidth="206.0" style="-fx-padding: 10; -fx-background-radius: 4;">
          <children>
             <Label fx:id="lblDirValue" layoutX="18.0" layoutY="28.0" style="-fx-text-fill: #0b66d0; -fx-font-size:28px; -fx-font-weight:bold;" text="0.00° grados" />
          </children>
       </AnchorPane>
 
-                  <!-- Canvas on the right for vector drawing (centered inside right area) -->
+                  
       <Canvas fx:id="vectorCanvas" height="592.0" layoutX="1182.0" layoutY="322.0" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10,0,0,4);" width="592.0" />
    </children>
 </AnchorPane>

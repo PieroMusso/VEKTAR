@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vektar.controllers.TheoryController.FisicaController">
    <children>
@@ -22,6 +22,7 @@
             <Image url="@../../../../assets/image/botones/btnSiguiente.png" />
          </image>
       </ImageView>
+      <Hyperlink layoutX="1566.0" layoutY="96.0" onMouseClicked="#handleGoCalc" style="-fx-text-fill: #063b72; -fx-font-weight: bold; -fx-font-size: 20;" text="Ir a Calculadora" />
       <ImageView fx:id="btnInicio" fitHeight="87.0" fitWidth="417.0" layoutX="10.0" layoutY="196.0" onMouseClicked="#handleInicio" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../assets/image/botones/btnInicio.png" />

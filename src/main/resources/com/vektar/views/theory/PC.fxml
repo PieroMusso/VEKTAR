@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
@@ -23,6 +24,7 @@
             <Image url="@../../../../assets/image/botones/btnSiguiente.png" />
          </image>
       </ImageView>
+      <Hyperlink layoutX="1560.0" layoutY="96.0" onMouseClicked="#handleGoCalc" style="-fx-text-fill: #063b72; -fx-font-weight: bold; -fx-font-size: 20;" text="Ir a Calculadora" />
       <ImageView fx:id="btnInicio" fitHeight="87.0" fitWidth="417.0" layoutX="10.0" layoutY="196.0" onMouseClicked="#handleInicio" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../assets/image/botones/btnInicio.png" />
@@ -63,7 +65,7 @@
             <Image url="@../../../../assets/image/botones/btnQI2.png" />
          </image>
       </ImageView>
-         <!-- Vector A panel -->
+         
          <AnchorPane layoutX="471.0" layoutY="274.0" prefHeight="250.0" prefWidth="554.0" style="-fx-background-color: #063b72; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8,0,0,2);">
             <children>
                <Label fx:id="lblAHeader" layoutX="48.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 25; -fx-font-weight: bold;" text="Vector A" />
@@ -76,7 +78,7 @@
             </children>
          </AnchorPane>
 
-         <!-- Vector B panel -->
+         
          <AnchorPane layoutX="471.0" layoutY="535.0" prefHeight="243.0" prefWidth="554.0" style="-fx-background-color: #063b72; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8,0,0,2);">
             <children>
                <Label fx:id="lblBHeader" layoutX="48.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 25; -fx-font-weight: bold;" text="Vector B" />

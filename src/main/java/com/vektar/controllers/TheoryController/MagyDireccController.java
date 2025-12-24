@@ -190,4 +190,9 @@ public class MagyDireccController {
         System.out.println("handleQuiz invoked in MagyDireccController");
         VistaUtil.cambiarContenido("quiz/quiz1");
     }
+
+    @FXML
+    private void handleGoCalc(MouseEvent event) {
+        VistaUtil.cambiarContenido("theory/Vector3D");
+    }
 }
