@@ -1,5 +1,4 @@
 # Maven build
-target/
 
 # IDE/editor
 .vscode/
