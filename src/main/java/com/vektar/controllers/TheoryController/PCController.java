@@ -28,7 +28,6 @@ public class PCController {
         if (sliderBX != null) { sliderBX.setMin(-10); sliderBX.setMax(10); sliderBX.setValue(0); sliderBX.setBlockIncrement(1); }
         if (sliderBY != null) { sliderBY.setMin(-10); sliderBY.setMax(10); sliderBY.setValue(0); sliderBY.setBlockIncrement(1); }
 
-        // Force integer ticks so sliders represent integer coordinates
         if (sliderAX != null) { sliderAX.setMajorTickUnit(1); sliderAX.setMinorTickCount(0); sliderAX.setSnapToTicks(true); }
         if (sliderAY != null) { sliderAY.setMajorTickUnit(1); sliderAY.setMinorTickCount(0); sliderAY.setSnapToTicks(true); }
         if (sliderBX != null) { sliderBX.setMajorTickUnit(1); sliderBX.setMinorTickCount(0); sliderBX.setSnapToTicks(true); }
@@ -49,13 +48,12 @@ public class PCController {
     }
 
     private void updateCalc() {
-        // Use rounded integer values to compute cross product to avoid fractional rounding issues
+        
         double ax = Math.round(sliderAX.getValue());
         double ay = Math.round(sliderAY.getValue());
         double bx = Math.round(sliderBX.getValue());
         double by = Math.round(sliderBY.getValue());
-
-        // substitution text for cross: ax*by - ay*bx
+        
         if (lblSubstitution != null) {
             String sub = String.format("(%d)(%d) - (%d)(%d)", (int)ax, (int)by, (int)ay, (int)bx);
             lblSubstitution.setText(sub);
@@ -70,7 +68,6 @@ public class PCController {
 
     @FXML
     private void handleMenu(MouseEvent event) {
-        // Redirigir a la vista menu.fxml
         VistaUtil.cambiarContenido("menu/menu");
     }
 
@@ -81,55 +78,46 @@ public class PCController {
 
     @FXML
     private void handleInicio(MouseEvent event) {
-        // Redirigir a la vista inicio.fxml
         VistaUtil.cambiarContenido("menu/inicio");
     }
 
     @FXML
     private void handleMD(MouseEvent event) {
-        // Redirigir a la vista MagYDirecc.fxml
         VistaUtil.cambiarContenido("theory/MagYDirecc");
     }
 
     @FXML
     private void handleMagnitud(MouseEvent event) {
-        // Alias para compatibilidad con FXML que usa handleMagnitud
         VistaUtil.cambiarContenido("theory/MagYDirecc");
     }
 
     @FXML
     private void handleOB(MouseEvent event) {
-        // Redirigir a la vista OpBasic.fxml
         VistaUtil.cambiarContenido("theory/OpBasic");
     }
 
     @FXML
     private void handleEV(MouseEvent event) {
-        // Redirigir a la vista EspVect.fxml
         VistaUtil.cambiarContenido("theory/EspVect");
     }
 
     @FXML
     private void handlePP(MouseEvent event) {
-        // Redirigir a la vista PP.fxml
         VistaUtil.cambiarContenido("theory/PP");
     }
 
     @FXML
     private void handlePC(MouseEvent event) {
-        // Redirigir a la misma vista PC (compatibilidad con FXML)
         VistaUtil.cambiarContenido("theory/PC");
     }
 
     @FXML
     private void handleFisica(MouseEvent event) {
-        // Redirigir a la vista Fisica.fxml
         VistaUtil.cambiarContenido("theory/Fisica");
     }
 
     @FXML
     private void handleQuiz(MouseEvent event) {
-        // Ir a quiz1
         VistaUtil.cambiarContenido("quiz/quiz1");
     }
 }

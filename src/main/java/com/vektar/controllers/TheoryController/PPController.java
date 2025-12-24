@@ -23,13 +23,11 @@ public class PPController {
 
     @FXML
     public void initialize() {
-        // configure sliders range -10..10
         if (sliderAX != null) { sliderAX.setMin(-10); sliderAX.setMax(10); sliderAX.setValue(0); sliderAX.setBlockIncrement(1); }
         if (sliderAY != null) { sliderAY.setMin(-10); sliderAY.setMax(10); sliderAY.setValue(0); sliderAY.setBlockIncrement(1); }
         if (sliderBX != null) { sliderBX.setMin(-10); sliderBX.setMax(10); sliderBX.setValue(0); sliderBX.setBlockIncrement(1); }
         if (sliderBY != null) { sliderBY.setMin(-10); sliderBY.setMax(10); sliderBY.setValue(0); sliderBY.setBlockIncrement(1); }
 
-        // Force integer ticks so sliders represent integer coordinates
         if (sliderAX != null) { sliderAX.setMajorTickUnit(1); sliderAX.setMinorTickCount(0); sliderAX.setSnapToTicks(true); }
         if (sliderAY != null) { sliderAY.setMajorTickUnit(1); sliderAY.setMinorTickCount(0); sliderAY.setSnapToTicks(true); }
         if (sliderBX != null) { sliderBX.setMajorTickUnit(1); sliderBX.setMinorTickCount(0); sliderBX.setSnapToTicks(true); }
@@ -40,7 +38,7 @@ public class PPController {
         if (lblBXVal != null && sliderBX != null) lblBXVal.textProperty().bind(Bindings.format("%.0f", sliderBX.valueProperty()));
         if (lblBYVal != null && sliderBY != null) lblBYVal.textProperty().bind(Bindings.format("%.0f", sliderBY.valueProperty()));
 
-        // update calculations when sliders change
+        
         if (sliderAX != null && sliderAY != null && sliderBX != null && sliderBY != null) {
             sliderAX.valueProperty().addListener((o,old,v) -> updateCalc());
             sliderAY.valueProperty().addListener((o,old,v) -> updateCalc());
@@ -51,23 +49,20 @@ public class PPController {
     }
 
     private void updateCalc() {
-        // Use rounded integer values to compute dot product (avoids fractional rounding inconsistencies)
+        
         double ax = Math.round(sliderAX.getValue());
         double ay = Math.round(sliderAY.getValue());
         double bx = Math.round(sliderBX.getValue());
         double by = Math.round(sliderBY.getValue());
-
-        // substitution text
+        
         if (lblSubstitution != null) {
             String sub = String.format("(%d)(%d) + (%d)(%d)", (int)ax, (int)bx, (int)ay, (int)by);
             lblSubstitution.setText(sub);
         }
-
-        // dot product using integer-rounded values
+        
         int dot = (int)(ax * bx + ay * by);
         if (lblResult != null) lblResult.setText(String.format("%d", dot));
-
-        // angle between A and B (degrees)
+        
         double magA = Math.hypot(ax, ay);
         double magB = Math.hypot(bx, by);
         String angleText = "0.0 grados";
@@ -82,7 +77,6 @@ public class PPController {
 
     @FXML
     private void handleMenu(MouseEvent event) {
-        // Redirigir a la vista menu.fxml
         VistaUtil.cambiarContenido("menu/menu");
     }
 
@@ -93,55 +87,46 @@ public class PPController {
 
     @FXML
     private void handleInicio(MouseEvent event) {
-        // Redirigir a la vista inicio.fxml
         VistaUtil.cambiarContenido("menu/inicio");
     }
 
     @FXML
     private void handleMD(MouseEvent event) {
-        // Redirigir a la vista MagYDirecc.fxml
         VistaUtil.cambiarContenido("theory/MagYDirecc");
     }
 
     @FXML
     private void handleMagnitud(MouseEvent event) {
-        // Alias para compatibilidad con FXML que usa handleMagnitud
         VistaUtil.cambiarContenido("theory/MagYDirecc");
     }
 
     @FXML
     private void handleOB(MouseEvent event) {
-        // Redirigir a la vista OpBasic.fxml
         VistaUtil.cambiarContenido("theory/OpBasic");
     }
 
     @FXML
     private void handleEV(MouseEvent event) {
-        // Redirigir a la vista EspVect.fxml
         VistaUtil.cambiarContenido("theory/EspVect");
     }
 
     @FXML
     private void handlePC(MouseEvent event) {
-        // Redirigir a la vista PC.fxml
         VistaUtil.cambiarContenido("theory/PC");
     }
 
     @FXML
     private void handleFisica(MouseEvent event) {
-        // Redirigir a la vista Fisica.fxml
         VistaUtil.cambiarContenido("theory/Fisica");
     }
 
     @FXML
     private void handlePP(MouseEvent event) {
-        // Redirigir a la misma vista PP (compatibilidad con FXML)
         VistaUtil.cambiarContenido("theory/PP");
     }
 
     @FXML
     private void handleQuiz(MouseEvent event) {
-        // Ir a quiz1
         VistaUtil.cambiarContenido("quiz/quiz1");
     }
 }

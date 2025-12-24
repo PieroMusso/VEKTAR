@@ -11,23 +11,15 @@ import java.io.IOException;
 
 import com.vektar.util.VistaUtil;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
-   private static Scene scene;
+    private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-
-        // Cargar el layout base Main.fxml con la ruta correcta
         FXMLLoader loader = new FXMLLoader(App.class.getResource("/com/vektar/Main.fxml"));
         Parent root = loader.load();
-
-        // Register the main container in VistaUtil
         VistaUtil.setContenedorPrincipal((AnchorPane) root);
-
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Vektar Desktop");

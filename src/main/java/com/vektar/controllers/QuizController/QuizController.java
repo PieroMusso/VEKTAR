@@ -29,7 +29,7 @@ public class QuizController {
 	private static class Question {
 		String enunciado;
 		String[] opciones = new String[4];
-		int correctIndex; // 0..3
+ 		int correctIndex;
 		Question(String e, String a, String b, String c, String d, int idx) {
 			enunciado = e;
 			opciones[0]=a; opciones[1]=b; opciones[2]=c; opciones[3]=d; correctIndex=idx;
@@ -37,7 +37,7 @@ public class QuizController {
 	}
 
 	private final int QUESTIONS_PER_TOPIC = 2;
-	private final int TOTAL_QUESTIONS = 10; // 5 temas * 2
+	private final int TOTAL_QUESTIONS = 10;
 
 	private List<Question> questions = new ArrayList<>();
 	private int currentIndex = 0;
@@ -56,7 +56,7 @@ public class QuizController {
 	}
 
 	private void buildQuestionPool() {
-		// Magnitud y Dirección
+		
 		List<Question> mag = new ArrayList<>();
 		mag.add(new Question("Dado el vector A = (3, 4), ¿cuál es su magnitud?","3","4","5","7",2));
 		mag.add(new Question("¿Cuál es la fórmula correcta para calcular la magnitud de un vector A = (ax, ay)?","ax + ay","√(ax² − ay²)","√(ax² + ay²)","ax² + ay²",2));
@@ -69,7 +69,7 @@ public class QuizController {
 		mag.add(new Question("¿Cuál es la dirección de un vector que apunta exactamente hacia abajo en el plano cartesiano?","0°","90°","180°","270°",3));
 		mag.add(new Question("Un vector tiene componentes (-3, -3). ¿En qué cuadrante se encuentra su dirección?","Primer cuadrante","Segundo cuadrante","Tercer cuadrante","Cuarto cuadrante",2));
 
-		// Operaciones Básicas
+		
 		List<Question> opb = new ArrayList<>();
 		opb.add(new Question("Dados los vectores A = (2, 3) y B = (1, -1), ¿cuál es A + B?","(3, 2)","(1, 4)","(3, 4)","(1, 2)",0));
 		opb.add(new Question("Dados los vectores A = (5, -2) y B = (3, 4), ¿cuál es A − B?","(2, 2)","(8, 2)","(2, -6)","(-2, 6)",2));
@@ -82,7 +82,7 @@ public class QuizController {
 		opb.add(new Question("Dados los vectores A = (7, 0) y B = (−2, 5), ¿cuál es A + B?","(5, 5)","(9, 5)","(5, −5)","(−9, 5)",0));
 		opb.add(new Question("Si A = (3, 3) y B = (−3, −3), ¿cuál es A + B?","(0, 0)","(6, 6)","(−6, −6)","(3, −3)",0));
 
-		// Espacios Vectoriales (reemplazadas por nuevas preguntas)
+		
 		List<Question> ev = new ArrayList<>();
 		ev.add(new Question("¿Qué es un espacio vectorial?","Conjunto de números","Conjunto con suma y escalar","Conjunto de matrices","Conjunto sin reglas",1));
 		ev.add(new Question("¿Qué operaciones definen un espacio vectorial?","Producto y división","Resta y división","Suma y escalar","Producto cruzado",2));
@@ -95,7 +95,7 @@ public class QuizController {
 		ev.add(new Question("Todo espacio vectorial contiene:","Solo vectores no nulos","El vector 1","El vector 0","Solo vectores unitarios",2));
 		ev.add(new Question("¿ℝ³ es un espacio vectorial?","No","Sí","Solo a veces","Depende",1));
 
-		// Producto cruzado
+		
 		List<Question> cross = new ArrayList<>();
 		cross.add(new Question("A = (1, 2, 0), B = (3, 4, 0)\nA × B = ?","(0, 0, −2)","(0, 0, −4)","(0, 0, −6)","(0, 0, −10)",0));
 		cross.add(new Question("A = (2, −1, 0), B = (1, 3, 0)\nA × B = ?","(0, 0, 5)","(0, 0, −5)","(0, 5, 0)","(5, 0, 0)",0));
@@ -108,7 +108,7 @@ public class QuizController {
 		cross.add(new Question("A = (2, −1, 1), B = (1, 1, 1)\nA × B = ?","(−2, −1, 3)","(−2, 1, 3)","(1, −3, 2)","(2, −1, −3)",1));
 		cross.add(new Question("A = (0, 2, 1), B = (3, 0, −1)\nA × B = ?","(−2, 3, −6)","(2, 3, −6)","(−2, −3, 6)","(2, −3, 6)",1));
 
-		// Producto punto
+		
 		List<Question> dot = new ArrayList<>();
 		dot.add(new Question("Sean A = (1, 2) y B = (3, 4). ¿A · B = ?","10","11","12","14",1));
 		dot.add(new Question("Sean A = (−2, 5) y B = (4, −1). ¿A · B = ?","−13","−9","3","13",0));
@@ -121,7 +121,7 @@ public class QuizController {
 		dot.add(new Question("Si A = (3, 4), ¿A · A = ?","5","7","25","49",2));
 		dot.add(new Question("Sean A = (2, −1) y B = (−2, 1). ¿A · B = ?","−5","−4","0","5",0));
 
-		// For each topic pick 2 random questions
+		
 		Random rnd = new Random();
 		pickRandomInto(questions, mag, rnd);
 		pickRandomInto(questions, opb, rnd);
@@ -129,9 +129,9 @@ public class QuizController {
 		pickRandomInto(questions, cross, rnd);
 		pickRandomInto(questions, dot, rnd);
 
-		// shuffle overall order
+		
 		Collections.shuffle(questions, rnd);
-		// ensure we have exactly TOTAL_QUESTIONS (in case sources changed)
+		
 		if (questions.size() > TOTAL_QUESTIONS) questions = questions.subList(0, TOTAL_QUESTIONS);
 	}
 
@@ -161,7 +161,7 @@ public class QuizController {
 		Question q = questions.get(currentIndex);
 		if (optionIndex == q.correctIndex) score++;
 
-		// next
+		
 		if (currentIndex + 1 >= questions.size()) {
 			QuizState.lastScore = score;
 			QuizState.totalQuestions = questions.size();

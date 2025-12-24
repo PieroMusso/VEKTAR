@@ -27,7 +27,7 @@ public class OpBasicController {
 
     @FXML
     public void initialize() {
-        // configure sliders (range -10..10)
+        
         if (sliderAX != null) {
             sliderAX.setMin(-10);
             sliderAX.setMax(10);
@@ -69,7 +69,7 @@ public class OpBasicController {
             lblBValue.textProperty().bind(Bindings.format("(%.0f, %.0f)", sliderBX.valueProperty(), sliderBY.valueProperty()));
         }
 
-        // update results when sliders change
+        
         if (sliderAX != null && sliderAY != null && sliderBX != null && sliderBY != null) {
             sliderAX.valueProperty().addListener((o,old,v) -> updateSummary());
             sliderAY.valueProperty().addListener((o,old,v) -> updateSummary());
@@ -85,9 +85,9 @@ public class OpBasicController {
         double bx = sliderBX.getValue();
         double by = sliderBY.getValue();
 
-        double sx = ax + bx; // sum
+        double sx = ax + bx;
         double sy = ay + by;
-        double dx = ax - bx; // diff
+        double dx = ax - bx;
         double dy = ay - by;
         double twoax = 2 * ax;
         double twoay = 2 * ay;

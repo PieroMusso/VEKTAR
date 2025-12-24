@@ -30,7 +30,6 @@ public class ResultadoController {
 		if (lblRegresar != null) {
 			lblRegresar.setUnderline(true);
 			lblRegresar.setOnMouseClicked(this::handleVolver);
-			// change cursor via style
 			String prev = lblRegresar.getStyle() == null ? "" : lblRegresar.getStyle();
 			lblRegresar.setStyle(prev + "; -fx-cursor: hand;");
 		}
