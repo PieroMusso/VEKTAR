@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vektar.controllers.TheoryController.Vector3DController">
+    <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/slides/12.png" />
+         </image>
+      </ImageView>
+          <AnchorPane prefWidth="894.0">
+              <children>
+                  <Pane fx:id="subsceneContainer" layoutX="63.0" layoutY="153.0" prefHeight="831.0" prefWidth="971.0" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="-140.0" AnchorPane.topAnchor="153.0" />
+            <ImageView fx:id="btnRegresar" fitHeight="53.0" fitWidth="56.0" layoutX="373.0" layoutY="51.0" onMouseClicked="#onBack" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../assets/image/botones/btnX.png" />
+               </image>
+            </ImageView>
+              </children>
+          </AnchorPane>
+              <HBox layoutX="1273.0" layoutY="185.0" prefHeight="53.0" prefWidth="380.0" spacing="6">
+                  <children>
+                      <TextField fx:id="axField" alignment="CENTER" prefHeight="50.0" prefWidth="120.0" promptText="Ax">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+                      <TextField fx:id="ayField" alignment="CENTER" prefHeight="50.0" prefWidth="120.0" promptText="Ay">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+                      <TextField fx:id="azField" alignment="CENTER" prefHeight="50.0" prefWidth="120.0" promptText="Az">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+                  </children>
+              </HBox>
+              <HBox layoutX="1273.0" layoutY="276.0" prefHeight="53.0" prefWidth="380.0" spacing="6">
+                  <children>
+                      <TextField fx:id="bxField" alignment="CENTER" prefHeight="50.0" prefWidth="120.0" promptText="Bx">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+                      <TextField fx:id="byField" alignment="CENTER" prefHeight="50.0" prefWidth="120.0" promptText="By">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+                      <TextField fx:id="bzField" alignment="CENTER" prefHeight="50.0" prefWidth="120.0" promptText="Bz">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+                  </children>
+              </HBox>
+      <Label fx:id="lblSuma" contentDisplay="CENTER" layoutX="1273.0" layoutY="435.0" prefHeight="53.0" prefWidth="261.0" style="-fx-text-fill: black; -fx-font-size: 30; -fx-font-weight: bold;" text="0" textAlignment="CENTER" />
+      <Label fx:id="lblResta" contentDisplay="CENTER" layoutX="1273.0" layoutY="540.0" prefHeight="53.0" prefWidth="261.0" style="-fx-text-fill: black; -fx-font-size: 30; -fx-font-weight: bold;" text="0" textAlignment="CENTER" />
+      <Label fx:id="lblPP" contentDisplay="CENTER" layoutX="1273.0" layoutY="646.0" prefHeight="53.0" prefWidth="261.0" style="-fx-text-fill: black; -fx-font-size: 30; -fx-font-weight: bold;" text="0" textAlignment="CENTER" />
+      <Label fx:id="lblPC" contentDisplay="CENTER" layoutX="1273.0" layoutY="752.0" prefHeight="53.0" prefWidth="261.0" style="-fx-text-fill: black; -fx-font-size: 30; -fx-font-weight: bold;" text="0" textAlignment="CENTER" />
+      <Label fx:id="lblMgA" contentDisplay="CENTER" layoutX="1334.0" layoutY="857.0" prefHeight="53.0" prefWidth="120.0" style="-fx-text-fill: black; -fx-font-size: 30; -fx-font-weight: bold;" text="0" textAlignment="CENTER" />
+      <Label fx:id="lblMgB" contentDisplay="CENTER" layoutX="1730.0" layoutY="857.0" prefHeight="53.0" prefWidth="120.0" style="-fx-text-fill: black; -fx-font-size: 30; -fx-font-weight: bold;" text="0" textAlignment="CENTER" />
+      <Label fx:id="lblSuma1" alignment="CENTER" contentDisplay="CENTER" layoutX="1544.0" layoutY="969.0" onMouseClicked="#onClear" prefHeight="53.0" prefWidth="120.0" style="-fx-text-fill: black; -fx-font-size: 30; -fx-font-weight: bold; -fx-cursor: hand;" text="Limpiar" textAlignment="CENTER" underline="true" />
+      <ImageView fx:id="btnAgregar" fitHeight="150.0" fitWidth="200.0" layoutX="1681.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnAgregar.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnCalcular" fitHeight="83.0" fitWidth="194.0" layoutX="1223.0" layoutY="957.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/image/botones/btnCalcular.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblFSuma" contentDisplay="CENTER" layoutX="1271.0" layoutY="382.0" prefHeight="53.0" prefWidth="632.0" style="-fx-text-fill: #004aad; -fx-font-size: 30; -fx-font-weight: bold;" text="(ax+bx, ay+by, az+bz)" textAlignment="CENTER" />
+      <Label fx:id="lblFResta" contentDisplay="CENTER" layoutX="1265.0" layoutY="488.0" prefHeight="53.0" prefWidth="632.0" style="-fx-text-fill: #004aad; -fx-font-size: 30; -fx-font-weight: bold;" text="(ax-bx, ay-by, az-bz)" textAlignment="CENTER" />
+      <Label fx:id="lblFPP" contentDisplay="CENTER" layoutX="1245.0" layoutY="593.0" prefHeight="53.0" prefWidth="673.0" style="-fx-text-fill: #004aad; -fx-font-size: 30; -fx-font-weight: bold;" text="ax*bx+ay+by+az+ay" textAlignment="CENTER" />
+      <Label fx:id="lblFPC" contentDisplay="CENTER" layoutX="1251.0" layoutY="699.0" prefHeight="53.0" prefWidth="684.0" style="-fx-text-fill: #004aad; -fx-font-size: 30; -fx-font-weight: bold;" text=" (ay*bz - az*by, az*bx - ax*bz, ax*by - ay*bx)" textAlignment="CENTER" />
+    </children>
+</AnchorPane>
